@@ -1,4 +1,5 @@
 ik-analyzer-solr4.7
+
 ik-analyzer for solr4.7.x
 
 本项目基于ik-analyzer-solr7 进行了降版本操作，项目网站为https://github.com/magese/ik-analyzer-solr7
