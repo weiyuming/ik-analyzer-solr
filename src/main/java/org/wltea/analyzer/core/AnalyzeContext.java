@@ -256,6 +256,23 @@ class AnalyzeContext {
                 index++;
             }
         }
+        
+        //XXX  2018年9月26日  尉彧溟将全词放到拆分中，用于特殊场合的全词完整匹配
+        // lexeme类中的第一个参数是分词开始的偏移位置，第二个参数是开始的位置，第三个参数是结束的位置，第四个参数表示中文单字的方式获取
+        Lexeme singleCharLexeme = new Lexeme(0 , 0 , this.available , Lexeme.TYPE_CNCHAR);
+        boolean hasMax = true;
+        for (Lexeme lex : results) {
+            // 判断结果集合中是否已经存在全词
+          if (singleCharLexeme.equals(lex)) {
+            hasMax = false;
+          }
+        }
+        // 如果不存在就把全词放入分词结果中
+        if (hasMax) {
+          this.results.add(singleCharLexeme);
+        }
+       
+        
         //清空当前的Map
         this.pathMap.clear();
     }

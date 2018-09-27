@@ -73,7 +73,7 @@ public class LuceneIndexAndSearchDemo {
             ireader = DirectoryReader.open(directory);
             isearcher = new IndexSearcher(ireader);
 
-            String keyword = "中文分词工具包";
+            String keyword = "2017 年中文分词工具包";
             //使用QueryParser查询分析器构造Query对象
             //XXX  尉彧溟
             QueryParser qp = new QueryParser(Version.LUCENE_47, fieldName, analyzer);

@@ -13,9 +13,7 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.util.*;
 
-/**
- * @author <a href="magese@live.cn">Magese</a>
- */
+
 public class IKTokenizerFactory extends TokenizerFactory implements ResourceLoaderAware, UpdateThread.UpdateJob {
 
 	private boolean useSmart;
@@ -56,10 +54,10 @@ public class IKTokenizerFactory extends TokenizerFactory implements ResourceLoad
                 }
             }
             // 如果IO流集合不为空则执行加载词典
-            if (!inputStreamList.isEmpty())
-                Dictionary.reloadDic(inputStreamList);
+            if (!inputStreamList.isEmpty()) {
+            	Dictionary.reloadDic(inputStreamList);
+            }
         }
-		
 	}
 
     /**
